@@ -28,10 +28,11 @@ console.log(`Array: `, array);
 console.log('\nusing [Array.map()]: ');
 returned = array.map((element, index, array) => {
     console.log(`element's index equals: [${index}] and value: `, element);
-    return typeof(element)==='number'? element*10 : element;
+    return typeof (element) === 'number' ? element * 10 : element;
 });
 console.log('\n[Array.map()] returns value: ', returned);
-console.log('[Array.map()] works as [Array.forEach()] but returns changed origin array. You need to ecplisit return value');
+console.log(`[Array.map()] works as [Array.forEach()] but returns changed origin array.
+ You need to ecplisit return value`);
 console.log(`--------------------------------------------`);
 
 /* using Array.filter() */
@@ -40,10 +41,20 @@ console.log(`Array: `, array);
 console.log('\nusing [Array.filter()]: ');
 returned = array.filter((element, index, array) => {
     console.log(`element's index equals: [${index}] and value: `, element);
-    return typeof(element)==='number';
+    return typeof (element) === 'number';
 });
 console.log('\n[Array.filter()] returns value: ', returned);
-console.log('[Array.map()] works as [Array.forEach()] but returns changed origin array. You need to return boolean value.');
+console.log(`[Array.map()] works as [Array.forEach()] but returns changed origin array. 
+You need to return boolean value.`);
+console.log('if you return true - the element appeares in returned array, if false - not');
+console.log(`Array: `, array);
+console.log('\nusing [Array.filter()]: ');
+returned = array.filter(({ length }) => {
+    console.log(`elements length equals: [${length}]`);
+});
+console.log('\n[Array.filter()] returns value: ', returned);
+console.log(`[Array.map()] works as [Array.forEach()] but returns changed origin array. 
+You need to return boolean value.`);
 console.log('if you return true - the element appeares in returned array, if false - not');
 console.log(`--------------------------------------------`);
 
@@ -53,11 +64,12 @@ console.log(`Array: `, array);
 console.log('\nusing [Array.find()]: ');
 returned = array.find((element, index, array) => {
     console.log(`element's index equals: [${index}] and value: `, element);
-    return typeof(element)==='string';
+    return typeof (element) === 'string';
 });
 console.log('\n[Array.find()] returns value: ', returned);
 console.log('[Array.find()] works as [Array.forEach()] but returns changed origin array and stops loop.');
-console.log('The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.');
+console.log(`The find() method returns the value of the first element in the array that satisfies the 
+provided testing function. Otherwise undefined is returned.`);
 console.log(`--------------------------------------------`);
 
 /* using Array.find() */
@@ -66,8 +78,9 @@ console.log(`Array: `, array);
 console.log('\nusing [Array.findIndex()]: ');
 returned = array.findIndex((element, index, array) => {
     console.log(`element's index equals: [${index}] and value: `, element);
-    return typeof(element)==='object';
+    return typeof (element) === 'object';
 });
 console.log('\n[Array.findIndex()] returns value: ', returned);
-console.log('[Array.findIndex()] works as [Array.forEach()] but returns index of the first element from origin array\n that satisfies the provide tresting function and stops loop.\n Otherwise undefined is returned.');
+console.log(`[Array.findIndex()] works as [Array.forEach()] but returns index of the first element from origin array
+\n that satisfies the provide tresting function and stops loop.\n Otherwise undefined is returned.`);
 console.log(`--------------------------------------------`);
